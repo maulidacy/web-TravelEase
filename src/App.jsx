@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FiSun, FiMoon } from "react-icons/fi";
 import Hero from "./components/Hero";
 import Form from "./components/Form";
 import DestinationCard from "./components/Card";
 import ThemeToggle from "./components/ThemeToggle";
+import Navigation from "./components/Navigation";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -18,6 +18,9 @@ function App() {
           : "bg-gradient-to-br from-blue-50 to-cyan-100"
       }`}
     >
+      {/* Navigation */}
+      <Navigation theme={theme} />
+
       {/* Theme Toggle */}
       <ThemeToggle theme={theme} setTheme={setTheme} />
 
