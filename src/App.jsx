@@ -4,6 +4,7 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import Hero from "./components/Hero";
 import Form from "./components/Form";
 import DestinationCard from "./components/Card";
+import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -18,12 +19,7 @@ function App() {
       }`}
     >
       {/* Theme Toggle */}
-      <button
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="fixed top-4 right-4 p-2 rounded-full bg-white/20 backdrop-blur-md"
-      >
-        {theme === "dark" ? <FiSun size={24} /> : <FiMoon size={24} />}
-      </button>
+      <ThemeToggle theme={theme} setTheme={setTheme} />
 
       {/* Hero Section */}
       <Hero theme={theme} />
